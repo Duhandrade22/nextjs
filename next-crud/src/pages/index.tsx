@@ -3,11 +3,18 @@ import Tabela from "../components/tabela";
 import Cliente from '../core/cliente'
 
 const clientes = [
-  new Cliente('Stefanie', 32,'1'),
-  new Cliente('Arthur', 20,'2'),
-  new Cliente('Mariana', 25,'3'),
-  new Cliente('Eduardo', 34,'4'),
+  new Cliente('Stefanie', 32, '1'),
+  new Cliente('Arthur', 20, '2'),
+  new Cliente('Mariana', 25, '3'),
+  new Cliente('Eduardo', 34, '4'),
 ]
+
+function clienteSelecionado(cliente: Cliente) {
+  
+}
+function clienteExcluido(cliente: Cliente) {
+  
+}
 
 export default function Home() {
   return (
@@ -17,9 +24,11 @@ export default function Home() {
     text-white 
 
     `}>
-    <Layout titulo='Cadastro Simples'>
-      <Tabela clientes={clientes}></Tabela>
-    </Layout>
+      <Layout titulo='Cadastro Simples'>
+        <Tabela clientes={clientes}
+        clienteSelecionado={clienteSelecionado}
+        clienteExcluido={clienteExcluido} />
+      </Layout>
     </div>
   )
 }
