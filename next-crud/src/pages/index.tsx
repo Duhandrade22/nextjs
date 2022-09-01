@@ -1,3 +1,5 @@
+import Botao from "../components/botao";
+import Formulario from "../components/formulario";
 import Layout from "../components/layout";
 import Tabela from "../components/tabela";
 import Cliente from '../core/cliente'
@@ -10,10 +12,10 @@ const clientes = [
 ]
 
 function clienteSelecionado(cliente: Cliente) {
-  
+
 }
 function clienteExcluido(cliente: Cliente) {
-  
+
 }
 
 export default function Home() {
@@ -25,9 +27,13 @@ export default function Home() {
 
     `}>
       <Layout titulo='Cadastro Simples'>
+        <div className="flex justify-end">
+          <Botao className="mb-4">Novo Cliente</Botao>
+        </div>
         <Tabela clientes={clientes}
-        clienteSelecionado={clienteSelecionado}
-        clienteExcluido={clienteExcluido} />
+          clienteSelecionado={clienteSelecionado}
+          clienteExcluido={clienteExcluido} />
+        <Formulario cliente={clientes[3]}/>
       </Layout>
     </div>
   )
